@@ -31,6 +31,9 @@
 #' }
 animate_full_join <- function(x, y, result = "gif") {
 
+  check_xy_format(x)
+  check_xy_format(y)
+
   initial_join_dfs <- proc_data(x, "x") %>%
     bind_rows(mutate(proc_data(y, "y"), .x = .x + 3)) %>%
     mutate(frame = 1)
