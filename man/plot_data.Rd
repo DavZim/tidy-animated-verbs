@@ -14,7 +14,7 @@ plot_data(x, title = "", ...)
 \item{...}{additional arguments such as title_family and text_family}
 }
 \value{
-
+a ggplot
 }
 \description{
 Plots a dataset

@@ -1,14 +1,15 @@
 #' Processes the data
 #'
-#' @param x
-#' @param .id
-#' @param color_fun
-#' @param color_when
-#' @param ...
+#' @param x a data_frame
+#' @param .id the id column
+#' @param color_fun the function to colorize the data
+#' @param color_when when should the coloring be applied
+#' @param ... further arguments passed to color_fun
 #'
-#' @return
+#' @return a data_frame
 #'
 #' @examples
+#' NULL
 proc_data <- function(x, .id = "x", color_fun = colorize_keys,
                       color_when = c("after", "before"), ...) {
   color_when <- match.arg(color_when)

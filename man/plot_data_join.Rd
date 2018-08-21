@@ -8,11 +8,22 @@ plot_data_join(x, title = "", xlims = xlim(0.5, 5.5),
   ylims = ylim(-3.5, -0.5), ...)
 }
 \arguments{
+\item{x}{a data_frame}
+
+\item{title}{the title of the plot}
+
+\item{xlims}{the xlimits}
+
+\item{ylims}{the ylimits}
+
 \item{...}{further argument passed to plot_data}
 }
 \value{
-
+a ggplot object
 }
 \description{
 Plots a join of data
+}
+\examples{
+NULL
 }

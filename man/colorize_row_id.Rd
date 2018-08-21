@@ -7,11 +7,18 @@
 colorize_row_id(df, n_colors, key_col = "id")
 }
 \arguments{
-\item{key_col}{}
+\item{df}{a data_frame}
+
+\item{n_colors}{the number of colors}
+
+\item{key_col}{the key column}
 }
 \value{
-
+a data_frame
 }
 \description{
 Colorizes Row ID
+}
+\examples{
+NULL
 }

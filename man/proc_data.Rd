@@ -8,11 +8,22 @@ proc_data(x, .id = "x", color_fun = colorize_keys,
   color_when = c("after", "before"), ...)
 }
 \arguments{
-\item{...}{}
+\item{x}{a data_frame}
+
+\item{.id}{the id column}
+
+\item{color_fun}{the function to colorize the data}
+
+\item{color_when}{when should the coloring be applied}
+
+\item{...}{further arguments passed to color_fun}
 }
 \value{
-
+a data_frame
 }
 \description{
 Processes the data
+}
+\examples{
+NULL
 }

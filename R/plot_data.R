@@ -4,7 +4,7 @@
 #' @param title a title for the plot
 #' @param ... additional arguments such as title_family and text_family
 #'
-#' @return
+#' @return a ggplot
 #'
 #' @examples
 #' x <- data_frame(

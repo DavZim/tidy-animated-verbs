@@ -8,11 +8,22 @@ plot_data_set(x, title = "", xlims = xlim(1.5, 6.5),
   ylims = ylim(-3.5, -0.5), ...)
 }
 \arguments{
-\item{ylims}{}
+\item{x}{a data_frame}
+
+\item{title}{the title of the plot}
+
+\item{xlims}{the xlimits}
+
+\item{ylims}{the ylimits}
+
+\item{...}{further argument passed to plot_data}
 }
 \value{
-
+a ggplot object
 }
 \description{
 Plots a set operation
+}
+\examples{
+NULL
 }

@@ -1,14 +1,15 @@
 #' Colorize Keys
 #'
-#' @param df
-#' @param n_colors
-#' @param key_col
-#' @param color_other
-#' @param color_missing
+#' @param df a data_frame
+#' @param n_colors number of colors
+#' @param key_col the key for the colors
+#' @param color_other color for other
+#' @param color_missing color for missing
 #'
-#' @return
+#' @return a data_frame
 #'
 #' @examples
+#' NULL
 colorize_keys <- function(df, n_colors, key_col = "id", color_other = "#d0d0d0", color_missing = "#ffffff") {
   # Assumes that key_col is integer
   colors <- scales::brewer_pal(type = "qual", "Set1")(n_colors)

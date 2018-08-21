@@ -8,11 +8,22 @@ colorize_keys(df, n_colors, key_col = "id", color_other = "#d0d0d0",
   color_missing = "#ffffff")
 }
 \arguments{
-\item{color_missing}{}
+\item{df}{a data_frame}
+
+\item{n_colors}{number of colors}
+
+\item{key_col}{the key for the colors}
+
+\item{color_other}{color for other}
+
+\item{color_missing}{color for missing}
 }
 \value{
-
+a data_frame
 }
 \description{
 Colorize Keys
+}
+\examples{
+NULL
 }

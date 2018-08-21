@@ -7,11 +7,16 @@
 proc_data_set(x, .id = "x")
 }
 \arguments{
-\item{.id}{}
+\item{x}{a data_frame}
+
+\item{.id}{an id}
 }
 \value{
-
+a data_frame
 }
 \description{
 Processes a dataset for set operations
+}
+\examples{
+NULL
 }
