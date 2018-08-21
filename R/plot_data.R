@@ -15,7 +15,8 @@ plot_data <- function(x, title = "") {
   ggplot(x) +
     aes(.x, .y, fill = color, label = value) +
     geom_tile(aes(width = .width, alpha = alpha), color = "white", size = 3) +
-    geom_text(aes(x = .x), hjust = 0.5, size = 12, family = "Fira Sans", color = "white") +
+    geom_text(data = x %>% filter(!is.na(value)),
+              aes(x = .x), hjust = 0.5, size = 12, family = "Fira Sans", color = "white") +
     scale_fill_identity() +
     scale_alpha_identity() +
     coord_equal() +
