@@ -2,15 +2,22 @@
 % Please edit documentation in R/animate_full_join.R
 \name{animate_full_join}
 \alias{animate_full_join}
-\title{Title}
+\title{Animates a full join between two datasets}
 \usage{
 animate_full_join(x, y, result = "gif")
 }
 \arguments{
+\item{x}{the left dataset to join}
+
+\item{y}{the right dataset to join}
+
 \item{result}{gif or static, if static, only the last frame is shown.}
 }
+\value{
+a gif or a ggplot image
+}
 \description{
-Title
+Animates a full join between two datasets
 }
 \examples{
 x <- data_frame(
@@ -32,6 +39,6 @@ animate_full_join(x, y, "static")
 
  # to save the gif you can use
  fj <- animate_full_join(x, y)
- anim_save(here::here("images", "full-join.gif"), fj)
+ anim_save("full-join.gif", fj)
 }
 }
