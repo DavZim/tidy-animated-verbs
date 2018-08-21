@@ -194,17 +194,17 @@ anti_join(x, y, by = "id")
 ``` r
 x
 #> # A tibble: 3 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 1     a    
-#> 2 1     b    
-#> 3 2     a
-y 
+#>       x y    
+#>   <dbl> <chr>
+#> 1     1 a    
+#> 2     1 b    
+#> 3     2 a
+y
 #> # A tibble: 2 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 1     a    
-#> 2 2     b
+#>       x y    
+#>   <dbl> <chr>
+#> 1     1 a    
+#> 2     2 b
 ```
 
 ### Union
@@ -216,12 +216,12 @@ y
 ``` r
 union(x, y)
 #> # A tibble: 4 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 2     b    
-#> 2 2     a    
-#> 3 1     b    
-#> 4 1     a
+#>       x y    
+#>   <dbl> <chr>
+#> 1     2 b    
+#> 2     2 a    
+#> 3     1 b    
+#> 4     1 a
 ```
 
 ![](images/union-rev.gif)
@@ -229,12 +229,12 @@ union(x, y)
 ``` r
 union(y, x)
 #> # A tibble: 4 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 2     a    
-#> 2 1     b    
-#> 3 2     b    
-#> 4 1     a
+#>       x y    
+#>   <dbl> <chr>
+#> 1     2 a    
+#> 2     1 b    
+#> 3     2 b    
+#> 4     1 a
 ```
 
 ### Union All
@@ -246,13 +246,13 @@ union(y, x)
 ``` r
 union_all(x, y)
 #> # A tibble: 5 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 1     a    
-#> 2 1     b    
-#> 3 2     a    
-#> 4 1     a    
-#> 5 2     b
+#>       x y    
+#>   <dbl> <chr>
+#> 1     1 a    
+#> 2     1 b    
+#> 3     2 a    
+#> 4     1 a    
+#> 5     2 b
 ```
 
 ### Intersection
@@ -264,9 +264,9 @@ union_all(x, y)
 ``` r
 intersect(x, y)
 #> # A tibble: 1 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 1     a
+#>       x y    
+#>   <dbl> <chr>
+#> 1     1 a
 ```
 
 ### Set Difference
@@ -279,10 +279,10 @@ intersect(x, y)
 ``` r
 setdiff(x, y)
 #> # A tibble: 2 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 1     b    
-#> 2 2     a
+#>       x y    
+#>   <dbl> <chr>
+#> 1     1 b    
+#> 2     2 a
 ```
 
 ![](images/setdiff-rev.gif)
@@ -290,9 +290,9 @@ setdiff(x, y)
 ``` r
 setdiff(y, x)
 #> # A tibble: 1 x 2
-#>   x     y    
-#>   <chr> <chr>
-#> 1 2     b
+#>       x y    
+#>   <dbl> <chr>
+#> 1     2 b
 ```
 
 ## Learn More
@@ -317,4 +317,4 @@ The animations were made possible by the newly re-written
 [Thomas Lin Pedersen](https://github.com/thomasp85) (original by [Dave
 Robinson](https://github.com/dgrtwo)). The [package
 readme](https://github.com/thomasp85/gganimate#README) provides an
-excellent (and quick) introduction to gganimte.
+excellent (and quick) introduction to gganimate.
