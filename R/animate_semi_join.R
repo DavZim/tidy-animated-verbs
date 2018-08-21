@@ -3,6 +3,7 @@
 #' @param x the left dataset to join
 #' @param y the right dataset to join
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param title the title for the graphic
 #' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
@@ -34,7 +35,7 @@
 #'   sj <- animate_semi_join(x, y)
 #'   anim_save("semi-join.gif", sj)
 #' }
-animate_semi_join <- function(x, y, result = "gif", ...) {
+animate_semi_join <- function(x, y, result = "gif", title = "semi_join(x, y)", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x)
   tidyAnimatedVerbs:::check_xy_format(y)
@@ -60,7 +61,7 @@ animate_semi_join <- function(x, y, result = "gif", ...) {
       sj_extra_blocks
     ) %>%
       arrange(value) %>%
-      tidyAnimatedVerbs:::plot_data("semi_join(x, y)", ...) %>%
+      tidyAnimatedVerbs:::plot_data(title, ...) %>%
       tidyAnimatedVerbs:::animate_plot()
 
     res <- animate(sj)
@@ -70,7 +71,7 @@ animate_semi_join <- function(x, y, result = "gif", ...) {
     res <- semi_join(x, y, "id") %>%
       tidyAnimatedVerbs:::proc_data() %>%
       mutate(.x = .x + 1.5) %>%
-      tidyAnimatedVerbs:::plot_data_join("semi_join(x, y)", ...)
+      tidyAnimatedVerbs:::plot_data_join(title, ...)
 
   }
 

@@ -1,12 +1,13 @@
 #' Animates a Plot
 #'
-#' @param x
-#' @param transition_length
-#' @param state_length
+#' @param x an object as returned by \code{\link{plot_data}}
+#' @param transition_length the length of the transition
+#' @param state_length the length of the states
 #'
-#' @return
+#' @return an animated gif
 #'
 #' @examples
+#' NULL
 animate_plot <- function(x, transition_length = 2, state_length = 1) {
   x +
     transition_states(frame, transition_length, state_length) +

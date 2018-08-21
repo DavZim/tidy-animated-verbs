@@ -3,6 +3,7 @@
 #' @param x the left dataset
 #' @param y the right dataset
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param title the title for the graphic
 #' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
@@ -36,7 +37,7 @@
 #'   setd <- animate_setdiff(x, y)
 #'   anim_save("setdiff.gif", setd)
 #' }
-animate_setdiff <- function(x, y, result = "gif", ...) {
+animate_setdiff <- function(x, y, result = "gif", title = "setdiff(x, y)", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x, y)
 
@@ -81,7 +82,7 @@ animate_setdiff <- function(x, y, result = "gif", ...) {
     ) %>%
       mutate(alpha = ifelse(is.na(alpha), 1, alpha)) %>%
       arrange(frame, desc(.y), desc(.id)) %>%
-      tidyAnimatedVerbs:::plot_data_set(., "setdiff(x, y)", ...) %>%
+      tidyAnimatedVerbs:::plot_data_set(., title, ...) %>%
       tidyAnimatedVerbs:::animate_plot()
 
     res <- animate(setd)
@@ -91,7 +92,7 @@ animate_setdiff <- function(x, y, result = "gif", ...) {
     res <- dplyr::setdiff(x, y) %>%
       tidyAnimatedVerbs:::proc_data_set() %>%
       mutate(.x = .x + 1.5) %>%
-      tidyAnimatedVerbs:::plot_data_set("setdiff(x, y)", ...)
+      tidyAnimatedVerbs:::plot_data_set(title, ...)
 
   }
 

@@ -4,7 +4,7 @@
 \alias{animate_setdiff}
 \title{Animates a setdiff operation between two datasets}
 \usage{
-animate_setdiff(x, y, result = "gif", ...)
+animate_setdiff(x, y, result = "gif", title = "setdiff(x, y)", ...)
 }
 \arguments{
 \item{x}{the left dataset}
@@ -12,6 +12,8 @@ animate_setdiff(x, y, result = "gif", ...)
 \item{y}{the right dataset}
 
 \item{result}{gif or static, if static, only the last frame is shown.}
+
+\item{title}{the title for the graphic}
 
 \item{...}{Further arguments such as \code{text_family} and \code{title_family} to specify the fonts}
 }

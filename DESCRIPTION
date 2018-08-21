@@ -15,7 +15,8 @@ Imports: rmarkdown,
     jsonlite,
     curl,
     showtext,
-    devtools
+    devtools,
+    svglite
 RoxygenNote: 6.1.0
 Suggests: 
     knitr

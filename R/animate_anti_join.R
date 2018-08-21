@@ -3,6 +3,7 @@
 #' @param x the left dataset to join
 #' @param y the right dataset to join
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param title the title for the graphic
 #' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
@@ -34,7 +35,7 @@
 #'   aj <- animate_anti_join(x, y)
 #'   anim_save("anti-join.gif", aj)
 #' }
-animate_anti_join <- function(x, y, result = "gif", ...) {
+animate_anti_join <- function(x, y, result = "gif", title = "anti_join(x, y)", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x)
   tidyAnimatedVerbs:::check_xy_format(y)
@@ -78,7 +79,7 @@ animate_anti_join <- function(x, y, result = "gif", ...) {
         .obj = ifelse(value == 4, 0, .obj)
       ) %>%
       arrange(.obj, frame) %>%
-      tidyAnimatedVerbs:::plot_data("anti_join(x, y)", ...) %>%
+      tidyAnimatedVerbs:::plot_data(title, ...) %>%
       tidyAnimatedVerbs:::animate_plot(transition_length = c(2, 1, 2),
                                        state_length = c(1, 0, 0, 1))
 
@@ -89,7 +90,7 @@ animate_anti_join <- function(x, y, result = "gif", ...) {
     res <- anti_join(x, y, by = "id") %>%
       tidyAnimatedVerbs:::proc_data() %>%
       mutate(.x = .x + 1.5) %>%
-      plot_data_join("anti_join(x, y)", ...)
+      plot_data_join(title, ...)
 
   }
 

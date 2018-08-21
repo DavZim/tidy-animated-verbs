@@ -4,7 +4,7 @@
 \alias{animate_anti_join}
 \title{Animates an anti join between two datasets}
 \usage{
-animate_anti_join(x, y, result = "gif", ...)
+animate_anti_join(x, y, result = "gif", title = "anti_join(x, y)", ...)
 }
 \arguments{
 \item{x}{the left dataset to join}
@@ -12,6 +12,8 @@ animate_anti_join(x, y, result = "gif", ...)
 \item{y}{the right dataset to join}
 
 \item{result}{gif or static, if static, only the last frame is shown.}
+
+\item{title}{the title for the graphic}
 
 \item{...}{Further arguments such as \code{text_family} and \code{title_family} to specify the fonts}
 }

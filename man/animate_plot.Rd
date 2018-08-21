@@ -7,11 +7,18 @@
 animate_plot(x, transition_length = 2, state_length = 1)
 }
 \arguments{
-\item{state_length}{}
+\item{x}{an object as returned by \code{\link{plot_data}}}
+
+\item{transition_length}{the length of the transition}
+
+\item{state_length}{the length of the states}
 }
 \value{
-
+an animated gif
 }
 \description{
 Animates a Plot
+}
+\examples{
+NULL
 }
