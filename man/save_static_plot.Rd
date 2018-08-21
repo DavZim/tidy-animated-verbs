@@ -2,16 +2,25 @@
 % Please edit documentation in R/save_static_plot.R
 \name{save_static_plot}
 \alias{save_static_plot}
-\title{Saves a static plot}
+\title{Saves a static plot into different folders (see \code{\link{static_plot_filename}})}
 \usage{
-save_static_plot(g, filename, formats = c("png", "svg"))
+save_static_plot(g, filename, formats = c("png", "svg"), width = 7,
+  height = 7)
 }
 \arguments{
-\item{formats}{}
-}
-\value{
+\item{g}{a ggplot object as returned by \code{\link{plot_data}}}
 
+\item{filename}{the filename}
+
+\item{formats}{the format for the files}
+
+\item{width}{the width of the plot}
+
+\item{height}{the height of the plot}
 }
 \description{
-Saves a static plot
+Saves a static plot into different folders (see \code{\link{static_plot_filename}})
+}
+\examples{
+NULL
 }
