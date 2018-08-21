@@ -9,6 +9,9 @@ animate_plot(x)
 \arguments{
 \item{x}{}
 }
+\value{
+
+}
 \description{
 Animates a Plot
 }

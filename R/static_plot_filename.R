@@ -4,7 +4,6 @@
 #' @param ext the extension
 #'
 #' @return
-#' @export
 #'
 #' @examples
 #' static_plot_filename("my-file", "png")

@@ -10,6 +10,9 @@ proc_data(x, .id = "x", color_fun = colorize_keys,
 \arguments{
 \item{...}{}
 }
+\value{
+
+}
 \description{
 Processes the data
 }

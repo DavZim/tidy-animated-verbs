@@ -10,6 +10,9 @@ plot_data_join(x, title = "", xlims = xlim(0.5, 5.5),
 \arguments{
 \item{ylims}{}
 }
+\value{
+
+}
 \description{
 Plots a join of data
 }

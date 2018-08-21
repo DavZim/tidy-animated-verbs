@@ -9,6 +9,9 @@ save_static_plot(g, filename, formats = c("png", "svg"))
 \arguments{
 \item{formats}{}
 }
+\value{
+
+}
 \description{
 Saves a static plot
 }

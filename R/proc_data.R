@@ -7,10 +7,10 @@
 #' @param ...
 #'
 #' @return
-#' @export
 #'
 #' @examples
-proc_data <- function(x, .id = "x", color_fun = colorize_keys, color_when = c("after", "before"), ...) {
+proc_data <- function(x, .id = "x", color_fun = colorize_keys,
+                      color_when = c("after", "before"), ...) {
   color_when <- match.arg(color_when)
   n_colors <- max(x$id)
 

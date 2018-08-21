@@ -5,7 +5,6 @@
 #' @param key_col
 #'
 #' @return
-#' @export
 #'
 #' @examples
 colorize_row_id <- function(df, n_colors, key_col = "id") {

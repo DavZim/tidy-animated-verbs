@@ -3,7 +3,6 @@
 #' @param x
 #'
 #' @return
-#' @export
 #'
 #' @examples
 animate_plot <- function(x) {

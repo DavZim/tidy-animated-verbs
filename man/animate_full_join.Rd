@@ -23,9 +23,15 @@ y <- data_frame(
   y = paste0("y", (1:4)[-3])
 )
 
-# render a gif
-animate_full_join(x, y)
-
 # render the static image
 animate_full_join(x, y, "static")
+
+\donttest{
+ # render a gif
+ animate_full_join(x, y)
+
+ # to save the gif you can use
+ fj <- animate_full_join(x, y)
+ anim_save(here::here("images", "full-join.gif"), fj)
+}
 }

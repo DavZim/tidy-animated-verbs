@@ -7,7 +7,6 @@
 #' @param color_missing
 #'
 #' @return
-#' @export
 #'
 #' @examples
 colorize_keys <- function(df, n_colors, key_col = "id", color_other = "#d0d0d0", color_missing = "#ffffff") {

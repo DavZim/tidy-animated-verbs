@@ -5,7 +5,6 @@
 #' @param formats
 #'
 #' @return
-#' @export
 #'
 #' @examples
 save_static_plot <- function(g, filename, formats = c("png", "svg")) {

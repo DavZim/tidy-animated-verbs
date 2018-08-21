@@ -9,6 +9,9 @@ plot_data(x, title = "")
 \arguments{
 \item{title}{}
 }
+\value{
+
+}
 \description{
 Plots the Data
 }

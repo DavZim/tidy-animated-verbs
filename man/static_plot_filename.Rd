@@ -11,6 +11,9 @@ static_plot_filename(x, ext)
 
 \item{ext}{the extension}
 }
+\value{
+
+}
 \description{
 Constructs the filename for a file and its extension
 }

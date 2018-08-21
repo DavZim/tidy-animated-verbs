@@ -9,6 +9,9 @@ colorize_row_id(df, n_colors, key_col = "id")
 \arguments{
 \item{key_col}{}
 }
+\value{
+
+}
 \description{
 Colorizes Row ID
 }

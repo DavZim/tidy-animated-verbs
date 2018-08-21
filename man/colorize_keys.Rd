@@ -10,6 +10,9 @@ colorize_keys(df, n_colors, key_col = "id", color_other = "#d0d0d0",
 \arguments{
 \item{color_missing}{}
 }
+\value{
+
+}
 \description{
 Colorize Keys
 }

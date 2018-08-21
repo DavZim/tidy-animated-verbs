@@ -5,7 +5,6 @@
 #' @param title
 #'
 #' @return
-#' @export
 #'
 #' @examples
 plot_data <- function(x, title = "") {
