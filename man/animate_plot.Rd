@@ -4,10 +4,10 @@
 \alias{animate_plot}
 \title{Animates a Plot}
 \usage{
-animate_plot(x)
+animate_plot(x, transition_length = 2, state_length = 1)
 }
 \arguments{
-\item{x}{}
+\item{state_length}{}
 }
 \value{
 
