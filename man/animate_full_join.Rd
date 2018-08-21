@@ -34,15 +34,15 @@ y <- data_frame(
 animate_full_join(x, y, "static")
 
 \donttest{
-to save a png of the static image, use
-fj <- animate_full_join(x, y, "static")
-ggsave("full-join.png", fj)
+  # to save a png of the static image, use
+  fj <- animate_full_join(x, y, "static")
+  ggsave("full-join.png", fj)
 
- # render a gif
- animate_full_join(x, y)
+  # render a gif
+  animate_full_join(x, y)
 
- # to save the gif, use
- fj <- animate_full_join(x, y)
- anim_save("full-join.gif", fj)
+  # to save the gif, use
+  fj <- animate_full_join(x, y)
+  anim_save("full-join.gif", fj)
 }
 }

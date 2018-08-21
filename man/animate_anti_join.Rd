@@ -34,15 +34,15 @@ y <- data_frame(
 animate_anti_join(x, y, "static")
 
 \donttest{
-to save a png of the static image, use
-aj <- animate_anti_join(x, y, "static")
-ggsave("anti-join.png", aj)
+  # to save a png of the static image, use
+  aj <- animate_anti_join(x, y, "static")
+  ggsave("anti-join.png", aj)
 
- # render a gif
- animate_anti_join(x, y)
+  # render a gif
+  animate_anti_join(x, y)
 
- # to save the gif, use
- aj <- animate_anti_join(x, y)
- anim_save("anti-join.gif", aj)
+  # to save the gif, use
+  aj <- animate_anti_join(x, y)
+  anim_save("anti-join.gif", aj)
 }
 }

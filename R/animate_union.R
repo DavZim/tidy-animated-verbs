@@ -1,4 +1,4 @@
-#' Animates an intersect between two datasets
+#' Animates a union between two datasets
 #'
 #' @param x the left dataset
 #' @param y the right dataset
@@ -21,21 +21,21 @@
 #' )
 #'
 #' # render the static image
-#' animate_intersect(x, y, "static")
+#' animate_union(x, y, "static")
 #'
 #' \donttest{
 #'   # to save a png of the static image, use
-#'   ins <- animate_intersect(x, y, "static")
-#'   ggsave("intersect.png", ins)
+#'   un <- animate_union(x, y, "static")
+#'   ggsave("union.png", un)
 #'
 #'   # render a gif
-#'   animate_intersect(x, y)
+#'   animate_union(x, y)
 #'
 #'   # to save the gif, use
-#'   ins <- animate_intersect(x, y)
-#'   anim_save("intersect.gif", ins)
+#'   un <- animate_union(x, y)
+#'   anim_save("union.gif", un)
 #' }
-animate_intersect <- function(x, y, result = "gif") {
+animate_union <- function(x, y, result = "gif") {
 
   tidyAnimatedVerbs:::check_xy_format(x, y)
 
@@ -46,29 +46,27 @@ animate_intersect <- function(x, y, result = "gif") {
     mutate(frame = 1)
 
   if (result == "gif") {
-    ins_df <- dplyr::intersect(x, y)
-
-    ins_step2 <- bind_rows(
-        tidyAnimatedVerbs:::proc_data_set(ins_df, "x"),
-        tidyAnimatedVerbs:::proc_data_set(ins_df, "y")
-      ) %>%
-      filter(.y == -1) %>%
-      mutate(frame = 2, .x = .x + 1.5)
-
-    ins <- initial_set_dfs %>%
-      bind_rows(ins_step2) %>%
-      arrange(desc(frame)) %>%
-      tidyAnimatedVerbs:::plot_data_set("intersect(x, y)") %>%
+    un <- bind_rows(
+      initial_set_dfs,
+      union(x, y) %>%
+        tidyAnimatedVerbs:::proc_data_set("xy") %>%
+        mutate(frame = 2, .x = .x + 1.5),
+      dplyr::intersect(x, y) %>%
+        tidyAnimatedVerbs:::proc_data_set("xy") %>%
+        mutate(frame = 2, .y = -4, .x = .x + 1.5)
+    ) %>%
+      tidyAnimatedVerbs:::plot_data_set("union(x, y)",
+                                        ylims = ylim(-4.5, -0.5)) %>%
       tidyAnimatedVerbs:::animate_plot()
 
-    res <- animate(ins)
+    res <- animate(un)
 
   } else if (result == "static") {
 
-    res <- dplyr::intersect(x, y) %>%
+    res <- dplyr::union(x, y) %>%
       tidyAnimatedVerbs:::proc_data_set() %>%
       mutate(.x = .x + 1.5) %>%
-      tidyAnimatedVerbs:::plot_data_set("intersect(x, y)")
+      tidyAnimatedVerbs:::plot_data_set("union(x, y)", ylims = ylim(-0.5, -4.5))
 
   }
 

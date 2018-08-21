@@ -6,7 +6,7 @@ check_xy_format <- function(x, y = NULL) {
       stop("x and y must have the names 'id' and 'x' or 'x'")
     }
   } else {
-    if (any(sort(sapply(x, class)) != sort(sapply(y, class))))
-      stop("x and y must have the same names in set-operations and the same class")
+    if (!any(names(x) %in% names(y)))
+      stop("x and y must have the same names in set-operations")
   }
 }

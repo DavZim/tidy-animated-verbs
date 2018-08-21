@@ -22,16 +22,16 @@
 #' animate_inner_join(x, y, "static")
 #'
 #' \donttest{
-#' to save a png of the static image, use
-#' ij <- animate_inner_join(x, y, "static")
-#' ggsave("inner-join.png", ij)
+#'   # to save a png of the static image, use
+#'   ij <- animate_inner_join(x, y, "static")
+#'   ggsave("inner-join.png", ij)
 #'
-#'  # render a gif
-#'  animate_inner_join(x, y)
+#'   # render a gif
+#'   animate_inner_join(x, y)
 #'
-#'  # to save the gif, use use
-#'  ij <- animate_full_join(x, y)
-#'  anim_save("inner-join.gif", ij)
+#'   # to save the gif, use use
+#'   ij <- animate_inner_join(x, y)
+#'   anim_save("inner-join.gif", ij)
 #' }
 animate_inner_join <- function(x, y, result = "gif") {
 

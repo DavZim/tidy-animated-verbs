@@ -22,16 +22,16 @@
 #' animate_anti_join(x, y, "static")
 #'
 #' \donttest{
-#' to save a png of the static image, use
-#' aj <- animate_anti_join(x, y, "static")
-#' ggsave("anti-join.png", aj)
+#'   # to save a png of the static image, use
+#'   aj <- animate_anti_join(x, y, "static")
+#'   ggsave("anti-join.png", aj)
 #'
-#'  # render a gif
-#'  animate_anti_join(x, y)
+#'   # render a gif
+#'   animate_anti_join(x, y)
 #'
-#'  # to save the gif, use
-#'  aj <- animate_anti_join(x, y)
-#'  anim_save("anti-join.gif", aj)
+#'   # to save the gif, use
+#'   aj <- animate_anti_join(x, y)
+#'   anim_save("anti-join.gif", aj)
 #' }
 animate_anti_join <- function(x, y, result = "gif") {
 
@@ -78,8 +78,8 @@ animate_anti_join <- function(x, y, result = "gif") {
       ) %>%
       arrange(.obj, frame) %>%
       tidyAnimatedVerbs:::plot_data("anti_join(x, y)") %>%
-      animate_plot(transition_length = c(2, 1, 2),
-                   state_length = c(1, 0, 0, 1))
+      tidyAnimatedVerbs:::animate_plot(transition_length = c(2, 1, 2),
+                                       state_length = c(1, 0, 0, 1))
 
     res <- animate(aj)
 
