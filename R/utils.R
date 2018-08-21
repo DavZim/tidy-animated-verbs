@@ -1,6 +1,12 @@
-check_xy_format <- function(x) {
-  if (!(all(c("id", "x") %in% names(x)) ||
-        all(c("id", "y") %in% names(x)))) {
-    stop("x and y must have the names 'id' and 'x' or 'x'")
+check_xy_format <- function(x, y = NULL) {
+  if (is.null(y)) {
+    # y only provided if x and y have to have the same names, thus set-operations!
+    if (!(all(c("id", "x") %in% names(x)) ||
+          all(c("id", "y") %in% names(x)))) {
+      stop("x and y must have the names 'id' and 'x' or 'x'")
+    }
+  } else {
+    if (any(sort(sapply(x, class)) != sort(sapply(y, class))))
+      stop("x and y must have the same names in set-operations and the same class")
   }
 }
