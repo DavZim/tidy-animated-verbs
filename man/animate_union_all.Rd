@@ -4,7 +4,7 @@
 \alias{animate_union_all}
 \title{Animates a union-all between two datasets}
 \usage{
-animate_union_all(x, y, result = "gif")
+animate_union_all(x, y, result = "gif", ...)
 }
 \arguments{
 \item{x}{the left dataset}
@@ -12,6 +12,8 @@ animate_union_all(x, y, result = "gif")
 \item{y}{the right dataset}
 
 \item{result}{gif or static, if static, only the last frame is shown.}
+
+\item{...}{Further arguments such as \code{text_family} and \code{title_family} to specify the fonts}
 }
 \value{
 a gif or a ggplot image

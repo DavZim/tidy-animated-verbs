@@ -3,6 +3,7 @@
 #' @param x the left dataset to join
 #' @param y the right dataset to join
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
 #' @export
@@ -33,7 +34,7 @@
 #'   lj <- animate_left_join(x, y)
 #'   anim_save("left-join.gif", lj)
 #' }
-animate_left_join <- function(x, y, result = "gif") {
+animate_left_join <- function(x, y, result = "gif", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x)
   tidyAnimatedVerbs:::check_xy_format(y)
@@ -60,14 +61,14 @@ animate_left_join <- function(x, y, result = "gif") {
     ) %>%
       mutate(color = ifelse(is.na(value), "#ffffff", color)) %>%
       arrange(value) %>%
-      tidyAnimatedVerbs:::plot_data("left_join(x, y)") %>%
+      tidyAnimatedVerbs:::plot_data("left_join(x, y)", ...) %>%
       tidyAnimatedVerbs:::animate_plot()
 
     res <- animate(lj)
 
   } else if (result == "static") {
 
-    res <- tidyAnimatedVerbs:::plot_data_join(lj_joined_dfs, "left_join(x, y)")
+    res <- tidyAnimatedVerbs:::plot_data_join(lj_joined_dfs, "left_join(x, y)", ...)
 
   }
 

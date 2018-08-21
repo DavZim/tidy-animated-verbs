@@ -4,7 +4,7 @@
 \alias{animate_full_join}
 \title{Animates a full join between two datasets}
 \usage{
-animate_full_join(x, y, result = "gif")
+animate_full_join(x, y, result = "gif", ...)
 }
 \arguments{
 \item{x}{the left dataset to join}
@@ -12,6 +12,8 @@ animate_full_join(x, y, result = "gif")
 \item{y}{the right dataset to join}
 
 \item{result}{gif or static, if static, only the last frame is shown.}
+
+\item{...}{Further arguments such as \code{text_family} and \code{title_family} to specify the fonts}
 }
 \value{
 a gif or a ggplot image

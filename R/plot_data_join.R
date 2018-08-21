@@ -4,13 +4,14 @@
 #' @param title
 #' @param xlims
 #' @param ylims
+#' @param ... further argument passed to plot_data
 #'
 #' @return
 #'
 #' @examples
-plot_data_join <- function(x, title = "", xlims = xlim(0.5, 5.5), ylims = ylim(-3.5, -0.5)) {
+plot_data_join <- function(x, title = "", xlims = xlim(0.5, 5.5), ylims = ylim(-3.5, -0.5), ...) {
   x %>%
     filter(!is.na(value)) %>%
-    plot_data(title) +
+    plot_data(title, ...) +
     xlims + ylims
 }

@@ -2,16 +2,32 @@
 % Please edit documentation in R/plot_data.R
 \name{plot_data}
 \alias{plot_data}
-\title{Plots the Data}
+\title{Plots a dataset}
 \usage{
-plot_data(x, title = "")
+plot_data(x, title = "", ...)
 }
 \arguments{
-\item{title}{}
+\item{x}{a dataset as prepared by \code{\link{proc_data}}}
+
+\item{title}{a title for the plot}
+
+\item{...}{additional arguments such as title_family and text_family}
 }
 \value{
 
 }
 \description{
-Plots the Data
+Plots a dataset
+}
+\examples{
+x <- data_frame(
+  id = 1:3,
+  x = paste0("x", 1:3)
+)
+
+x \%>\%
+  tidyAnimatedVerbs:::proc_data() \%>\%
+  tidyAnimatedVerbs:::plot_data(title = "sample data",
+                                text_family = "Times New Roman",
+                                title_family = "Times New Roman")
 }

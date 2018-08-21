@@ -20,3 +20,4 @@ RoxygenNote: 6.1.0
 Suggests: 
     knitr
 VignetteBuilder: knitr
+Encoding: UTF-8

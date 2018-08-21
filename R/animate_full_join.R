@@ -3,6 +3,7 @@
 #' @param x the left dataset to join
 #' @param y the right dataset to join
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
 #' @export
@@ -33,7 +34,7 @@
 #'   fj <- animate_full_join(x, y)
 #'   anim_save("full-join.gif", fj)
 #' }
-animate_full_join <- function(x, y, result = "gif") {
+animate_full_join <- function(x, y, result = "gif", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x)
   tidyAnimatedVerbs:::check_xy_format(y)
@@ -55,7 +56,7 @@ animate_full_join <- function(x, y, result = "gif") {
 
     fj <- initial_join_dfs %>%
       bind_rows(fj_joined_df, fj_extra_blocks) %>%
-      tidyAnimatedVerbs:::plot_data("full_join(x, y)") +
+      tidyAnimatedVerbs:::plot_data("full_join(x, y)", ...) +
       transition_states(frame, transition_length = 2, state_length = 1) +
       enter_appear() +
       exit_disappear(early = TRUE) +
@@ -69,7 +70,7 @@ animate_full_join <- function(x, y, result = "gif") {
       tidyAnimatedVerbs:::proc_data() %>%
       mutate(.x = .x + 1) %>%
       tidyAnimatedVerbs:::plot_data_join("full_join(x, y)",
-                                         ylims = ylim(-4.5, -0.5))
+                                         ylims = ylim(-4.5, -0.5), ...)
   }
 
   return(res)

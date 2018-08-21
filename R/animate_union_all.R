@@ -3,6 +3,7 @@
 #' @param x the left dataset
 #' @param y the right dataset
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
 #' @export
@@ -35,7 +36,7 @@
 #'   un <- animate_union_all(x, y)
 #'   anim_save("union.gif", un)
 #' }
-animate_union_all <- function(x, y, result = "gif") {
+animate_union_all <- function(x, y, result = "gif", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x, y)
 
@@ -59,7 +60,7 @@ animate_union_all <- function(x, y, result = "gif") {
     ) %>%
       arrange(desc(frame)) %>%
       tidyAnimatedVerbs:::plot_data_set("union_all(x, y)",
-                                        ylims = ylim(-5.5, -0.5)) +
+                                        ylims = ylim(-5.5, -0.5), ...) +
       transition_states(frame, 1, c(1, 0, 1, 0))
 
     res <- animate(ua)
@@ -70,7 +71,7 @@ animate_union_all <- function(x, y, result = "gif") {
       tidyAnimatedVerbs:::proc_data_set() %>%
       mutate(.x = .x + 1.5) %>%
       tidyAnimatedVerbs:::plot_data_set("union_all(x, y)",
-                                        ylims = ylim(-5.5, -0.5))
+                                        ylims = ylim(-5.5, -0.5), ...)
   }
 
   return(res)

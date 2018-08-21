@@ -3,6 +3,7 @@
 #' @param x the left dataset to join
 #' @param y the right dataset to join
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
 #' @export
@@ -33,7 +34,7 @@
 #'   ij <- animate_inner_join(x, y)
 #'   anim_save("inner-join.gif", ij)
 #' }
-animate_inner_join <- function(x, y, result = "gif") {
+animate_inner_join <- function(x, y, result = "gif", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x)
   tidyAnimatedVerbs:::check_xy_format(y)
@@ -59,7 +60,7 @@ animate_inner_join <- function(x, y, result = "gif") {
       mutate(removed = value %in% c("3", "4", "x3", "y4"),
              removed = as.integer(removed)) %>%
       arrange(desc(frame), removed, desc(.id)) %>%
-      tidyAnimatedVerbs:::plot_data("inner_join(x, y)") %>%
+      tidyAnimatedVerbs:::plot_data("inner_join(x, y)", ...) %>%
       tidyAnimatedVerbs:::animate_plot()
 
     res <- animate(ij)
@@ -69,7 +70,7 @@ animate_inner_join <- function(x, y, result = "gif") {
     res <- inner_join(x, y, by = "id") %>%
       tidyAnimatedVerbs:::proc_data() %>%
       mutate(.x = .x + 1) %>%
-      tidyAnimatedVerbs:::plot_data_join("inner_join(x, y)")
+      tidyAnimatedVerbs:::plot_data_join("inner_join(x, y)", ...)
   }
 
   return(res)

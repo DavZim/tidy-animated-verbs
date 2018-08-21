@@ -5,7 +5,7 @@
 \title{Plots a set operation}
 \usage{
 plot_data_set(x, title = "", xlims = xlim(1.5, 6.5),
-  ylims = ylim(-3.5, -0.5))
+  ylims = ylim(-3.5, -0.5), ...)
 }
 \arguments{
 \item{ylims}{}

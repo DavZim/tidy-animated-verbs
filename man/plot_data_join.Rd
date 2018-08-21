@@ -5,10 +5,10 @@
 \title{Plots a join of data}
 \usage{
 plot_data_join(x, title = "", xlims = xlim(0.5, 5.5),
-  ylims = ylim(-3.5, -0.5))
+  ylims = ylim(-3.5, -0.5), ...)
 }
 \arguments{
-\item{ylims}{}
+\item{...}{further argument passed to plot_data}
 }
 \value{
 

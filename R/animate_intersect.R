@@ -3,6 +3,7 @@
 #' @param x the left dataset
 #' @param y the right dataset
 #' @param result gif or static, if static, only the last frame is shown.
+#' @param ... Further arguments such as \code{text_family} and \code{title_family} to specify the fonts
 #'
 #' @return a gif or a ggplot image
 #' @export
@@ -35,7 +36,7 @@
 #'   ins <- animate_intersect(x, y)
 #'   anim_save("intersect.gif", ins)
 #' }
-animate_intersect <- function(x, y, result = "gif") {
+animate_intersect <- function(x, y, result = "gif", ...) {
 
   tidyAnimatedVerbs:::check_xy_format(x, y)
 
@@ -58,7 +59,7 @@ animate_intersect <- function(x, y, result = "gif") {
     ins <- initial_set_dfs %>%
       bind_rows(ins_step2) %>%
       arrange(desc(frame)) %>%
-      tidyAnimatedVerbs:::plot_data_set("intersect(x, y)") %>%
+      tidyAnimatedVerbs:::plot_data_set("intersect(x, y)", ...) %>%
       tidyAnimatedVerbs:::animate_plot()
 
     res <- animate(ins)
@@ -68,7 +69,7 @@ animate_intersect <- function(x, y, result = "gif") {
     res <- dplyr::intersect(x, y) %>%
       tidyAnimatedVerbs:::proc_data_set() %>%
       mutate(.x = .x + 1.5) %>%
-      tidyAnimatedVerbs:::plot_data_set("intersect(x, y)")
+      tidyAnimatedVerbs:::plot_data_set("intersect(x, y)", ...)
 
   }
 
