@@ -22,17 +22,21 @@
 #' animate_inner_join(x, y, "static")
 #'
 #' \donttest{
+#' to save a png of the static image, use
+#' ij <- animate_inner_join(x, y, "static")
+#' ggsave("inner-join.png", ij)
+#'
 #'  # render a gif
 #'  animate_inner_join(x, y)
 #'
-#'  # to save the gif you can use
-#'  fj <- animate_full_join(x, y)
-#'  anim_save("full-join.gif", fj)
+#'  # to save the gif, use use
+#'  ij <- animate_full_join(x, y)
+#'  anim_save("inner-join.gif", ij)
 #' }
 animate_inner_join <- function(x, y, result = "gif") {
 
-  check_xy_format(x)
-  check_xy_format(y)
+  tidyAnimatedVerbs:::check_xy_format(x)
+  tidyAnimatedVerbs:::check_xy_format(y)
 
   initial_join_dfs <- tidyAnimatedVerbs:::proc_data(x, "x") %>%
     bind_rows(mutate(tidyAnimatedVerbs:::proc_data(y, "y"), .x = .x + 3)) %>%
